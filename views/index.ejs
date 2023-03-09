@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs') %>
+
+    <nav class="flex justify-end">
+        <span>
+            <button class="menu px-3 pt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34">
+                <path fill="#5b5b28" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3zM3 21h18v2H3z"/>
+                </svg>
+            </button>
+        </span>
+    </nav>
+
+<h1 class="title">TODAY'S</h1>
+<h2 class="sub-title">Tasks</h2>
+<div class="parent-container">
+    <div class="task-container pl-10 pr-5">
+        <% for( let i = 0; i < tasks.length; i++ ) { %>
+            <li class="text-left py-1">
+                <a class="font-semibold text-3xl"  href="/tasks/<%=tasks[i].id%>">
+                    <%=tasks[i].name%>
+                </a> |
+                <a href="/tasks/<%=tasks[i].id%>/edit">Edit</a> |
+                <form class="inline" action="/tasks/<%=tasks[i].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+                <p class="py-1"><%=tasks[i].note%></p>
+            </li> 
+            <% } %>
+        </div>
+</div>
+<div class="create-container">
+    <div class="create-btn flex justify-center">
+        <a class="create " href="/tasks/new">Add Task</a>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs')  %>
+<h1 class="text-5xl mt-10 mb-10 flex justify-center mx-auto">Edit Task</h1>
+
+<form action="/tasks/<%=task.id%>?_method=PUT" method="POST">
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="name" placeholder="<%=task.name%>"/>
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="time" placeholder="<%=task.time%>"/>
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="note" placeholder="<%=task.note%>"/>
+    <input class="edit" type="submit" value="Edit Item"><br>
+</form>
+
+<a class="back" href="/tasks">Back</a>
+<%- include('../partials/footer.ejs') %>

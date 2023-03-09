@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs') %>
+
+<h1 class="text-5xl mt-10 flex justify-center mx-auto">New Product</h1><br>
+<form class="p-3" action="/tasks" method="POST">
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="name" placeholder="Name"/>
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="time" placeholder="Time"/>
+    <input class="border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" placeholder="note" name="note" /><br>
+    <input class=" flex justify-center mx-auto" type="submit" name="" value="Add Task" />
+</form>
+<a class="back" href="/tasks">Back</a>
+
+<%- include('../partials/footer.ejs') %>
