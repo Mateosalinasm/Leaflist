@@ -25,6 +25,10 @@ db.on('error', err => console.log(err.message))
 db.on('connected', () => console.log('MongoDB Connected'));
 db.on('disconnected', () => console.log('MongoDB Disconnected'));
 
+//Home Page route
+app.get('/home', (req, res) => {
+    res.render('home.ejs')
+})
 
 app.listen(PORT, (req, res) => {
     console.log('listening on port on', PORT)

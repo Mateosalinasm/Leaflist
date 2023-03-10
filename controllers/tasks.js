@@ -4,6 +4,8 @@ const Task = require('../models/tasks.js')
 
 //Routes
 
+
+
 //Index route
 router.get('/', (req, res) => {
     Task.find({}, (err, foundTask) => {
@@ -80,7 +82,7 @@ router.put('/:id', (req, res) => {
         res.send(err.message);
     } else {
         console.log(editedTask);
-        res.redirect('/tasks');
+        res.redirect('/tasks/' + req.params.id);
     }
     });
 });

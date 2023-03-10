@@ -1,11 +1,13 @@
 <%- include('../partials/header.ejs') %>
-<h1 class="text-center text-6xl"><%=task.name %></h1><br>
-<p class="text-center">
-    <%=task.note %><br><br>
-    <%=task.time %><br>
-</p><br>
-<button class="buy flex justify-center mx-auto"><a  href="/tasks">Buy</a></button><br>
-
+<h1 class="title text-center text-6xl"><%=task.name %></h1><br>
+<div class="parent-container">
+    <div class="task-container">
+        <p class="text-center">
+            <%=task.note %><br><br>
+            <%=task.time %><br>
+        </p><br>
+    </div>
+</div>
 
 <a class="back" href="/tasks">Back</a>
 <%- include('../partials/footer.ejs') %>
