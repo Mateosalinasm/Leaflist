@@ -30,6 +30,14 @@ app.get('/home', (req, res) => {
     res.render('home.ejs')
 })
 
+app.get('/home/sign-up', (req, res) => {
+    res.render('sign-up.ejs')
+})
+
+app.get('/home/log-in', (req, res) => {
+    res.render('log-in.ejs')
+})
+
 app.listen(PORT, (req, res) => {
     console.log('listening on port on', PORT)
 })

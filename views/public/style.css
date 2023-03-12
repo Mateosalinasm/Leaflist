@@ -49,6 +49,21 @@ body {
     padding-top: 40px;
     font-family: 'Poppins', sans-serif;
 }
+
+.home-container {
+    max-height: 350px; 
+    width: 400px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 10%;
+    color: white;
+    list-style: none;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 25vh;
+}
+
 .task-container::-webkit-scrollbar { 
     display: none; /* This will hide the scrollbar for Chrome, Safari and Opera */
 }
@@ -104,13 +119,23 @@ input::placeholder {
     color: white;
 }
 
-input[type="text"] {
+
+
+input[type="text"], input[type=password] {
     margin-bottom: 20px;
     border-radius: 50px;
     padding: 10px;
     border: 2px solid white;
     font-size: 25px;
 }
+
+/* input[type=password] {
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding: 10px;
+    border: 2px solid white;
+    font-size: 25px;
+} */
 
 .edit {
     margin-top: -2px;
@@ -124,4 +149,150 @@ input[type="text"] {
 .task-show-title {
     font-size: 2.5rem;
     font-weight: 600;
+    line-height: 50px;
+}
+
+.divide {
+    height: 1px;
+    background-color: white;
+    height: 1px;
+}
+
+.welcome {
+    position: relative;
+    top: -72px;
+    left: -58px;
+}
+
+.to {
+    position: relative;
+    top: -431px;
+    left: 9px;
+}
+
+.logo {
+    position: relative;
+    top: -102px;
+    left: 126px;
+    width: 320px;
+}
+
+.welcome1 {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #373720;
+    font-size: 70px;
+    position: relative;
+    top: -12px;
+    padding-left: 1rem;
+}
+
+
+.leaflist {
+    position: relative;
+    font-family: 'Breathing Personal Use';
+    font-weight: 200;
+    color: #373720;
+    font-size: 70px;
+    top: -40px;
+    left: 95px;
+}
+
+.req-btn {
+    align-items: center;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color: #373720;
+    /* color: rgba(91, 91, 40); */
+    background-color:#f5f5f5;
+    border: 1px solid #ccc; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-btns {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-top: 0.5rem;
+}
+
+.animate__zoomIn {
+    --animate-duration: 2s;
+}
+
+.sign-up-title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    color: #373720;
+    
+}
+
+.sign-up-inputs::placeholder {
+    color: #373720;
+    font-size: 1.2rem;
+}
+
+input.sign-up-inputs {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    
+}
+
+.sign-up-container {
+    max-height: 500px;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 10%;
+    list-style: none;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign-up-btn {
+    margin-top: 25px;
+}
+
+.sign-up-btn:hover, .log-in-btn:hover, .req-btn:hover{
+    transform: scale(1.05);
+}
+
+.log-in-container {
+    max-height: 400px;
+    width: 400px;
+    height: 365px;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 10%;
+    list-style: none;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.log-in-btn {
+    margin-top: 25px;
 }
