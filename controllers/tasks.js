@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
             res.send(err.message)
         }
         else {
-            console.log(foundTask)
+            // console.log(foundTask)
             res.render('index.ejs', {
                 tasks: foundTask
             })

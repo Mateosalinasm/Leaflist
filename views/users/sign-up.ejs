@@ -1,0 +1,20 @@
+<%- include('../../partials/header.ejs') %>
+<body style="background-image: url(/images/2.png);">
+    <div class="flex justify-center ">
+        <div class="sign-up-container">
+            <h1 class="sign-up-title">Sign Up</h1>
+            <div class="registration flex justify-center login-btns text-black">
+                <form id="sign-up-form" action="/users/sign-up" method="POST">
+                    <fieldset class="account-info flex justify-center flex-col items-center">
+                        <input placeholder="FIRST NAME" class="sign-up-inputs" name="firstName" type="text"/>
+                        <input placeholder="LAST NAME" class="sign-up-inputs" name="lastName" type="text">
+                        <input placeholder="USERNAME" class="sign-up-inputs" name="username" type="text"/>
+                        <input placeholder="PASSWORD" class="sign-up-inputs" name="password" type="password">
+                    </fieldset>
+                </form>
+            </div>
+            <input class="req-btn sign-up-btn" type="submit" value="Sign up" form="sign-up-form">
+        </div>
+    </div>
+</body>
+<%- include('../../partials/footer.ejs') %>

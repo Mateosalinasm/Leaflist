@@ -1,13 +1,13 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../../partials/header.ejs') %>
 <body style="background-image: url(/images/2.png);">
     <div class="flex justify-center ">
         <div class="log-in-container">
             <h1 class="sign-up-title">Log In</h1>
             <div class="registration flex justify-center login-btns text-black">
-                <form id="log-in-form" action="/register" method="POST">
+                <form id="log-in-form" action="/users/log-in" method="POST">
                     <fieldset class="account-info flex justify-center flex-col items-center">
-                        <input placeholder="USERNAME" class="sign-up-inputs" type="text"/>
-                        <input placeholder="PASSWORD" class="sign-up-inputs" type="password">
+                        <input placeholder="USERNAME" class="sign-up-inputs" name="username" type="text"/>
+                        <input placeholder="PASSWORD" class="sign-up-inputs" name="password" type="password">
                     </fieldset>
                 </form>
             </div>
@@ -15,4 +15,4 @@
         </div>
     </div>
 </body>
-<%- include('../partials/footer.ejs') %>
+<%- include('../../partials/footer.ejs') %>
