@@ -1,13 +1,22 @@
-<%- include('../partials/header.ejs') %>
-<h1 class="title text-center text-6xl"><%=task.name %></h1><br>
+<%- include('../partials/back.ejs')  %><br>
+<h1 class="title show-page text-center text-6xl">Leaflist</h1><br>
 <div class="parent-container">
-    <div class="task-container">
-        <p class="text-center">
-            <%=task.note %><br><br>
-            <%=task.time %><br>
-        </p><br>
+    <div class="show-container flex flex-col justify-center">
+        <h2 class="text-center h2-show align-top text-5xl"><%=task.name %></h2><br>
+        <p class="show-note text-center">
+            <%=task.note %>
+        </p>
+        <p class="show-time text-center font-semibold">
+            <%=task.time %>
+        </p>
+        <br>
+        <div class="btn-container flex flex-row items-end justify-evenly ">
+            <a class="edit-btn mx-auto" href="/tasks/<%=task.id%>/edit"><img class="edit-icon" src="/images/pngaaa.com-3703029.png" alt="edit icon"></a> 
+            <form class="delete-btn mx-auto" action="/tasks/<%=task.id%>?_method=DELETE" method="POST">
+                <input class="delete-icon" type="image" src="/images/pngaaa.com-5771971.png">
+            </form>
+        </div>
     </div>
 </div>
 
-<a class="back" href="/tasks">Back</a>
-<%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer.ejs') %>  

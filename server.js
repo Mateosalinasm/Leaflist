@@ -32,7 +32,7 @@ app.use('/tasks', tasksController)
 app.use('/users', usersController)
 
 //Connect to MongoDB
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.DATABASE_URI)
 const db = mongoose.connection
 db.on('error', err => console.log(err.message))
 db.on('connected', () => console.log('MongoDB Connected'));
@@ -41,6 +41,11 @@ db.on('disconnected', () => console.log('MongoDB Disconnected'));
 //Home Page route
 app.get('/home', (req, res) => {
     res.render('home.ejs')
+})
+
+//No User route
+app.get('/no-user', (req, res) => {
+    res.render('no-user.ejs')
 })
 
 app.listen(PORT, (req, res) => {

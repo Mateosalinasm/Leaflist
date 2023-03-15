@@ -1,9 +1,9 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/back.ejs')  %>
 
 <h1 class="title text-5xl flex justify-center mx-auto">New</h1><br>
 <h2 class="sub-title">Task</h2>
 <div class="parent-container">
-    <div class="task-container">
+    <div class="new-container">
         <form id="form-create" class="p-3" action="/tasks" method="POST">
             <input class="bg-transparent border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="name" placeholder="Name"/>
             <input class="bg-transparent border rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="time" placeholder="Time"/>
@@ -11,7 +11,11 @@
         </form>
     </div>
 </div>
-<input class="bg-transparent flex justify-center mx-auto" type="submit" form="form-create" name="" value="Add Task" />
-<a class="back" href="/tasks">Back</a>
+<!-- <input class="bg-transparent flex justify-center mx-auto" type="submit" form="form-create" name="" value="Add Task" /> -->
+<div class="create-container">
+    <div class="create-btn flex justify-center">
+        <input class="edit cursor-pointer flex justify-center mx-auto" type="submit" value="Add" form="form-create">
+    </div>
+</div>
 
 <%- include('../partials/footer.ejs') %>

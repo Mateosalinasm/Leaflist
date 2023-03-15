@@ -4,10 +4,18 @@ const Task = require('../models/tasks.js')
 
 //Routes
 
-
+//Authentication Required
+const authRequired = (req, res, next) => {
+    if(req.session.currentUser) {
+        next()
+    } else {
+        console.log('no user present')
+        res.redirect('/no-user')
+    }
+}
 
 //Index route
-router.get('/', (req, res) => {
+router.get('/', authRequired, (req, res) => {
     Task.find({}, (err, foundTask) => {
         if (err) {
             console.log(err)
@@ -31,13 +39,13 @@ router.post('/', (req, res) => {
 })
 
 //New Form route 
-router.get('/new', (req, res) => {
+router.get('/new', authRequired, (req, res) => {
     res.render('new.ejs')
 })
 
 
 //Show Route
-router.get('/:id', (req, res) => {
+router.get('/:id', authRequired, (req, res) => {
     Task.findById(req.params.id, (err, foundTask) => {
         if(err) {
             console.log(err.message);
@@ -51,7 +59,7 @@ router.get('/:id', (req, res) => {
 })
 
 //Edit Form Route
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', authRequired, (req, res) => {
     Task.findById(req.params.id, (err, foundTask) => {
         if(err) {
             console.log(err.message)
@@ -101,7 +109,12 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-
+// DESTROY SESSION ROUTE
+router.get('/sign-out', (req, res) => {
+    // this destroys the session
+    req.session.destroy()
+    res.redirect('/home')
+})
 // router.get('/seed', (req, res) =>{
 // 	Task.create([
 // 		{

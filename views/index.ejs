@@ -7,15 +7,25 @@
     <div class="task-container pl-10 pr-5">
         <% for( let i = 0; i < tasks.length; i++ ) { %>
             <li class="text-left py-1">
-                <a class="font-semibold text-3xl"  href="/tasks/<%=tasks[i].id%>">
-                    <%=tasks[i].name%>
-                </a> |
-                <a href="/tasks/<%=tasks[i].id%>/edit">Edit</a> |
-                <form class="inline" action="/tasks/<%=tasks[i].id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete">
-                </form>
-                <p class="py-1"><%=tasks[i].time%></p>
-                <p class="py-1"><%=tasks[i].note%></p>
+                <div class="time-container ">
+                    <div class="text-container">      
+                        <a class="font-semibold text-3xl"  href="/tasks/<%=tasks[i].id%>">
+                            <%=tasks[i].name%>
+                        </a> 
+                    </div>
+                    <p class="py-1 text-xl font-semibold"><%=tasks[i].time%></p>
+                </div>
+                <div class="toggle-container">
+                    <div class="note-container">
+                        <p class="py-1"><%=tasks[i].note%></p>
+                    </div>
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li> 
             <div class="divide"></div>
             <% } %>

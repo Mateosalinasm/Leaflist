@@ -1,21 +1,21 @@
-<%- include('../partials/header.ejs')  %>
+<%- include('../partials/back.ejs')  %>
 <h1 class="title">EDIT</h1>
 <h2 class="sub-title">Task</h2>
 <div class="parent-container">
-    <div class="task-container">
-        <li class="task-show-title pl-16">
+    <div class="edit-container">
+        <li class="task-show-title">
             <%=task.name%>
         </li>
-        <li class="task-show-li pl-16">
+        <li class="task-show-li">
             <%=task.time%>
         </li>
-        <li class="task-show-li pl-16">
+        <li class="task-show-li">
             <%=task.note%>
         </li>
         <form id="form-edit" class="py-5" action="/tasks/<%=task.id%>?_method=PUT" method="POST">
-            <input class="border bg-transparent rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="name" placeholder="<%=task.name%>"/>
-            <input class="border bg-transparent rounded-md p-1 flex justify-center mx-auto" type="text" name="time" placeholder="<%=task.time%>"/>
-            <input class="border bg-transparent rounded-md p-1 flex justify-center mx-auto" type="text" name="note" placeholder="<%=task.note%>"/>
+            <input class="border bg-transparent rounded-md p-1 m-1 flex justify-center mx-auto" type="text" name="name" value="<%=task.name%>"/>
+            <input class="border bg-transparent rounded-md p-1 flex justify-center mx-auto" type="text" name="time" value="<%=task.time%>"/>
+            <input class="border bg-transparent rounded-md p-1 flex justify-center mx-auto" type="text" name="note" value="<%=task.note%>"/>
         </form>
     </div>
 </div>
@@ -24,5 +24,5 @@
         <input class="edit cursor-pointer flex justify-center mx-auto" type="submit" value="Edit" form="form-edit">
     </div>
 </div>
-<a class="back" href="/tasks">Back</a>
+
 <%- include('../partials/footer.ejs') %>
