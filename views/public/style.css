@@ -16,7 +16,7 @@ body {
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 70px;
+    font-size: 90px;
     color: #373720;
 }
 
@@ -25,6 +25,7 @@ body {
     font-family: 'Breathing Personal Use';
     font-weight: 200;
     color: #373720;
+    font-size: 90px;
 }
 
 .show-note {
@@ -43,7 +44,7 @@ body {
 
 .switch-container {
     position: relative;
-    left: 15px;
+    left: 5px;
 }
 
 .switch {
@@ -107,8 +108,8 @@ input:checked + .slider:before {
     display: flex;
     justify-content: center;
     font-family: 'Breathing Personal Use';
-    font-size: 50px;
-    margin-top: -22px;
+    font-size: 70px;
+    margin-top: -28px;
     margin-bottom: 40px;
     color: #373720;
 }
@@ -121,21 +122,8 @@ input:checked + .slider:before {
 }
 
 .task-container {
-    max-height: 550px; 
+    max-height: 500px;
     overflow-y: scroll;
-    width: 400px;
-    height: 550px;
-    background-color: rgba(91, 91, 40, .7);
-    border-radius: 10%;
-    color: white;
-    list-style: none;
-    padding: 40px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.show-container {
-    display: flex;
-    max-height: 550px; 
     width: 400px;
     height: auto;
     background-color: rgba(91, 91, 40, .7);
@@ -144,10 +132,26 @@ input:checked + .slider:before {
     list-style: none;
     padding: 40px;
     font-family: 'Poppins', sans-serif;
+    min-height: 490px;
+}
+
+.show-container {
+    display: flex;
+    max-height: 550px;
+    width: 400px;
+    height: auto;
+    background-color: rgba(91, 91, 40, .7);
+    border-radius: 10%;
+    color: white;
+    list-style: none;
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 8vh;
 }
 
 .edit-container {
-    max-height: 550px; 
+    max-height: 430px; 
     overflow-y: scroll;
     width: 400px;
     height: auto;
@@ -305,7 +309,7 @@ input[type="text"], input[type=password] {
 
 
 .time {
-    width: 100px;
+    width: 60px;
 }
 
 .task-show-li {
@@ -519,4 +523,110 @@ input.sign-up-inputs {
     left: -6px;
     height: 340px;
     margin: 0 auto;
+}
+
+@media screen and (max-height: 975px) {
+    .task-container {
+        max-height: 450px; 
+        overflow-y: scroll;
+        width: 400px;
+        height: auto;
+        background-color: rgba(91, 91, 40, .7);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding: 40px;
+        font-family: 'Poppins', sans-serif;
+        min-height: 480px;
+    }
+
+    .sub-title {
+        display: flex;
+        justify-content: center;
+        font-family: 'Breathing Personal Use';
+        font-size: 50px;
+        margin-top: -20px;
+        margin-bottom:15px;
+        color: #373720;
+    }
+
+    .edit-container {
+        max-height: 460px;
+        overflow-y: scroll;
+        width: 400px;
+        height: auto;
+        background-color: rgba(91, 91, 40, .7);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding: 40px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 65px;
+        color: #373720;
+        margin-top: -30px;
+    }
+
+    .show-page {
+        margin-bottom: 40px;
+        font-family: 'Breathing Personal Use';
+        font-weight: 200;
+        color: #373720;
+        font-size: 80px;
+    }
+
+    .h2-show {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+
+    .show-container {
+        display: flex;
+        max-height: 550px;
+        width: 400px;
+        height: auto;
+        background-color: rgba(91, 91, 40, .7);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding: 40px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .new-container {
+        max-height: 550px;
+        width: 400px;
+        height: 350px;
+        background-color: rgba(91, 91, 40, .7);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding: 40px;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        top: 8vh;
+    }
+
+    .new-btn {
+        width: 400px;
+        height: 50px;
+        background-color: rgba(91, 91, 40, .7);
+        border-radius: 15px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+        position: relative;
+        top: 8vh;
+    }
 }

@@ -6,36 +6,79 @@
 <div class="parent-container">
     <div class="task-container pl-10 pr-5">
         <% for( let i = 0; i < tasks.length; i++ ) { %>
-            <li class="text-left py-1">
-                <div class="time-container ">
-                    <div class="text-container">      
-                        <a class="font-semibold text-3xl"  href="/tasks/<%=tasks[i].id%>">
-                            <%=tasks[i].name%>
-                        </a> 
+            <ul>
+                <li class="text-left py-1">
+                    <div class="time-container">
+                        <div class="text-container">      
+                            <a class="font-semibold text-3xl task-name"  href="/tasks/<%=tasks[i].id%>">
+                                <%=tasks[i].name%>
+                            </a> 
+                        </div>
+                        <p class="py-1 text-xl font-semibold time task-time"><%=tasks[i].time%></p>
                     </div>
-                    <p class="py-1 text-xl font-semibold"><%=tasks[i].time%></p>
-                </div>
-                <div class="toggle-container">
-                    <div class="note-container">
-                        <p class="py-1"><%=tasks[i].note%></p>
+                    <div class="toggle-container">
+                        <div class="note-container">
+                            <p class="py-1 task-note"><%=tasks[i].note%></p>
+                        </div>
+                        <div class="switch-container">
+                            <label class="switch">
+                                <input class="check" name="completed" type="checkbox" >
+                                <span class="slider"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="switch-container">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-            </li> 
+                </li>
+            </ul> 
             <div class="divide"></div>
-            <% } %>
-        </div>
+        <% } %>
+    </div>
 </div>
 <div class="create-container">
     <div class="create-btn flex justify-center">
         <a class="create p-2" href="/tasks/new">Add Task</a>
     </div>
 </div>
+<script>
+const toggle = document.querySelectorAll('.check');
+const taskNames = document.querySelectorAll('.task-name');
+const taskTimes = document.querySelectorAll('.task-time');
+const taskNotes = document.querySelectorAll('.task-note');
 
+toggle.forEach(function(toggle, index) {
+    // Read the stored value for the current checkbox
+    const isChecked = localStorage.getItem(`checkbox-${index}`);
+    
+    // If the stored value is true, set the opacity to .60; otherwise, set it to 1
+    if (isChecked === 'true') {
+        taskNames[index].style.opacity= '.60';
+        taskTimes[index].style.opacity= '.60';
+        taskNotes[index].style.opacity= '.60';
+        toggle.checked = true;
+    } else {
+        taskNames[index].style.opacity= '1';
+        taskTimes[index].style.opacity= '1';
+        taskNotes[index].style.opacity= '1';
+        toggle.checked = false;
+    }
+    
+    // Add a click event listener to the checkbox to update the stored value and the opacity
+    toggle.addEventListener('click', function() {
+        const isChecked = toggle.checked;
+        
+        localStorage.setItem(`checkbox-${index}`, isChecked);
+        
+        if (isChecked) {
+            taskNames[index].style.opacity= '.60';
+            taskTimes[index].style.opacity= '.60';
+            taskNotes[index].style.opacity= '.60';
+        } else {
+            taskNames[index].style.opacity= '1';
+            taskTimes[index].style.opacity= '1';
+            taskNotes[index].style.opacity= '1';
+        }
+    });
+});
+</script>
 
 <%- include('../partials/footer.ejs') %>
+

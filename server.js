@@ -1,13 +1,15 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const { google } = require('googleapis')
+const calendar = require('./controllers/calendar.js')
 const tasksController = require('./controllers/tasks.js')
 const usersController = require('./controllers/users.js')
 const methodOverride = require('method-override')
 require('dotenv').config()
 const path = require('path');
 const session = require('express-session')
-const bodyParser = require('body-parser');
+
 
 const PORT = process.env.PORT || 3005
 
@@ -30,6 +32,7 @@ app.use(express.json())
 app.use(methodOverride('_method'))
 app.use('/tasks', tasksController)
 app.use('/users', usersController)
+app.use(calendar)
 
 //Connect to MongoDB
 mongoose.connect(process.env.DATABASE_URI)
@@ -47,6 +50,7 @@ app.get('/home', (req, res) => {
 app.get('/no-user', (req, res) => {
     res.render('no-user.ejs')
 })
+
 
 app.listen(PORT, (req, res) => {
     console.log('listening on port on', PORT)
