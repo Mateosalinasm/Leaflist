@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const { google } = require('googleapis')
+// const { google } = require('googleapis')
 const calendar = require('./controllers/calendar.js')
 const tasksController = require('./controllers/tasks.js')
 const usersController = require('./controllers/users.js')
@@ -49,6 +49,11 @@ app.get('/home', (req, res) => {
 //No User route
 app.get('/no-user', (req, res) => {
     res.render('no-user.ejs')
+})
+
+//Calendar route
+app.get('/calendar', (req, res) => {
+    res.render('calendar.ejs')
 })
 
 

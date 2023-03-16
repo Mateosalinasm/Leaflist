@@ -175,10 +175,23 @@ input:checked + .slider:before {
     font-family: 'Poppins', sans-serif;
 }
 
-.home-container {
-    max-height: 350px; 
+.new-btn {
     width: 400px;
-    height: 350px;
+    height: 50px;
+    background-color: rgba(91, 91, 40, .7);
+    border-radius: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    position: relative;
+    top: 2vh;
+}
+
+.home-container {
+    max-height: 460px;
+    width: 470px;
+    height: 465px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     color: white;
@@ -351,11 +364,10 @@ font-family: 'Poppins', sans-serif;
     font-style: italic;
     font-weight: 600;
     color: #373720;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     position: relative;
     top: -12px;
-    padding-left: 1rem;
 }
 
 .to {
@@ -381,10 +393,10 @@ font-family: 'Poppins', sans-serif;
     font-style: italic;
     font-weight: 600;
     color: #373720;
-    font-size: 70px;
+    font-size: 75px;
     position: relative;
     top: -12px;
-    padding-left: 1rem;
+    text-align: center;
 }
 
 
@@ -393,9 +405,9 @@ font-family: 'Poppins', sans-serif;
     font-family: 'Breathing Personal Use';
     font-weight: 200;
     color: #373720;
-    font-size: 70px;
-    top: -40px;
-    left: 95px;
+    font-size: 85px;
+    top: 37px;
+    left: 77px;
 }
 
 .req-btn {
@@ -416,13 +428,13 @@ font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    padding-top: 0.5rem;
+    padding-top: 5.5rem;
 }
 
 .login-btns-no-user {
     display: flex;
     position: relative;
-    top: -165px;
+    top: -200px;
     justify-content: space-evenly;
     flex-direction: row;
 }
@@ -436,8 +448,9 @@ font-family: 'Poppins', sans-serif;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 70px;
     color: #373720;
+    margin-bottom: -60px;
     
 }
 
@@ -459,9 +472,9 @@ input.sign-up-inputs {
 }
 
 .sign-up-container {
-    max-height: 500px;
+    max-height: 535px;
     width: 400px;
-    height: 500px;
+    height: 535px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     list-style: none;
@@ -484,9 +497,9 @@ input.sign-up-inputs {
 }
 
 .log-in-container {
-    max-height: 400px;
+    max-height: 450px;
     width: 400px;
-    height: 365px;
+    height: 425px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     list-style: none;
@@ -519,10 +532,16 @@ input.sign-up-inputs {
 
 .leaf {
     position: relative;
-    top: -75px;
-    left: -6px;
-    height: 340px;
+    top: -83px;
+    left: 6px;
+    height: 441px;
     margin: 0 auto;
+}
+
+.position {
+    position: relative;
+    top: 0px;
+    left: 1px;
 }
 
 @media screen and (max-height: 975px) {
@@ -628,5 +647,53 @@ input.sign-up-inputs {
         font-size: 40px;
         position: relative;
         top: 8vh;
+    }
+
+    .home-container {
+        max-height: 400px; 
+        width: 450px;
+        height: 4000px;
+        background-color: rgba(255, 255, 255, 0.90);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding-top: 40px;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        top: 25vh;
+    }
+
+    .welcome1 {
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        color: #373720;
+        font-size: 60px;
+        position: relative;
+        top: -12px;
+        text-align: center;
+    }
+
+    .leaflist {
+        position: relative;
+        font-family: 'Breathing Personal Use';
+        font-weight: 200;
+        color: #373720;
+        font-size: 70px;
+        top: 25px;
+        left: 95px;
+    }
+
+    .login-btns {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        padding-top: 4.5rem;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    footer {
+        visibility: hidden;
     }
 }
