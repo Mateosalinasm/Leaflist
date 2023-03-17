@@ -17,6 +17,7 @@ const authRequired = (req, res, next) => {
 //Index route
 router.get('/', authRequired, (req, res) => {
     Task.find({}, (err, foundTask) => {
+        
         if (err) {
             console.log(err)
             res.send(err.message)

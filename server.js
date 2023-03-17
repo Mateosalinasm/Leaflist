@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-// const { google } = require('googleapis')
+const schedule = require('node-schedule')
 const calendar = require('./controllers/calendar.js')
 const tasksController = require('./controllers/tasks.js')
 const usersController = require('./controllers/users.js')
@@ -16,6 +16,16 @@ const PORT = process.env.PORT || 3005
 //Session
 const SESSION_SECRET = process.env.SESSION_SECRET
 console.log(SESSION_SECRET);
+
+// const someDate = new Date('2023-03-16T23:05:00.000')
+// schedule.scheduleJob(someDate, () => {
+//     console.log('Job ran @', new Date().toString());
+// })
+
+const mJob = schedule.scheduleJob('m-job','*/1 * * * * *', () => {
+    console.log('I ran...');
+    mJob.cancel()
+})
 
 app.use(session ({
     secret: SESSION_SECRET,

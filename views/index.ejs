@@ -53,11 +53,13 @@ toggle.forEach(function(toggle, index) {
         taskNames[index].style.opacity= '.60';
         taskTimes[index].style.opacity= '.60';
         taskNotes[index].style.opacity= '.60';
+        taskNotes[index].style.textDecoration = 'line-through'
         toggle.checked = true;
     } else {
         taskNames[index].style.opacity= '1';
         taskTimes[index].style.opacity= '1';
         taskNotes[index].style.opacity= '1';
+        taskNotes[index].style.textDecoration = 'none'
         toggle.checked = false;
     }
     
@@ -71,10 +73,12 @@ toggle.forEach(function(toggle, index) {
             taskNames[index].style.opacity= '.60';
             taskTimes[index].style.opacity= '.60';
             taskNotes[index].style.opacity= '.60';
+            taskNotes[index].style.textDecoration = 'line-through';
         } else {
             taskNames[index].style.opacity= '1';
             taskTimes[index].style.opacity= '1';
             taskNotes[index].style.opacity= '1';
+            taskNotes[index].style.textDecoration = 'none';
         }
     });
 });

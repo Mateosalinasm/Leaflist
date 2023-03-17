@@ -7,8 +7,6 @@ body {
     background-size:cover;
     background-position:center 60%;
     background-color: #e4e4bf;
-    /* filter: brightness(200%); */
-
 }
 
 .title {
@@ -189,9 +187,9 @@ input:checked + .slider:before {
 }
 
 .home-container {
-    max-height: 460px;
-    width: 470px;
-    height: 465px;
+    max-height: 600px;
+    width: 600px;
+    height: 600px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     color: white;
@@ -199,7 +197,7 @@ input:checked + .slider:before {
     padding-top: 40px;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: 25vh;
+    top: 20vh;
 }
 
 .task-container::-webkit-scrollbar { 
@@ -393,7 +391,7 @@ font-family: 'Poppins', sans-serif;
     font-style: italic;
     font-weight: 600;
     color: #373720;
-    font-size: 75px;
+    font-size: 100px;
     position: relative;
     top: -12px;
     text-align: center;
@@ -405,9 +403,9 @@ font-family: 'Poppins', sans-serif;
     font-family: 'Breathing Personal Use';
     font-weight: 200;
     color: #373720;
-    font-size: 85px;
-    top: 37px;
-    left: 77px;
+    font-size: 120px;
+    top: 70px;
+    left: 60px;
 }
 
 .req-btn {
@@ -420,14 +418,22 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid #ccc; 
     padding: 10px 20px; 
     border-radius: 4px; 
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
+}
+
+.log-in-btn {
+
 }
 
 .login-btns {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    padding-top: 8.5rem;
+}
+
+.sign-up-layout {
     padding-top: 5.5rem;
 }
 
@@ -467,9 +473,10 @@ input.sign-up-inputs {
     border-top: none;
     border-left: none;
     border-right: none;
-    background-color: transparent;
-    
+    background-color: transparent;    
 }
+
+
 
 .sign-up-container {
     max-height: 535px;
@@ -499,7 +506,7 @@ input.sign-up-inputs {
 .log-in-container {
     max-height: 450px;
     width: 400px;
-    height: 425px;
+    height: 450px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     list-style: none;
@@ -533,18 +540,40 @@ input.sign-up-inputs {
 .leaf {
     position: relative;
     top: -83px;
-    left: 6px;
+    left: -8px;
     height: 441px;
     margin: 0 auto;
 }
 
 .position {
     position: relative;
-    top: 0px;
-    left: 1px;
+    top: 12px;
 }
 
-@media screen and (max-height: 975px) {
+.leaf-img-tasks {
+    position: relative;
+    height: 175px;
+    top: -30px;
+    left: -40px;
+    margin-bottom: -125px;
+}
+
+.sign-out {
+    font-family: 'Poppins', sans-serif;
+    color: #373720;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px 20px 0px 0px;
+    height: 30px;
+}
+
+.sign-out:hover {
+    transform: scale(1.03);
+    transition: .1s;
+}
+
+
+@media screen and (max-height: 974px) {
     .task-container {
         max-height: 450px; 
         overflow-y: scroll;
@@ -567,6 +596,14 @@ input.sign-up-inputs {
         margin-top: -20px;
         margin-bottom:15px;
         color: #373720;
+    }
+
+    .sign-out {
+        font-family: 'Poppins', sans-serif;
+        color: #373720;
+        font-weight: 600;
+        font-size: 30px;
+        padding: 10px 20px;
     }
 
     .edit-container {
@@ -593,11 +630,21 @@ input.sign-up-inputs {
     }
 
     .show-page {
+        position: relative;
+        top: 30px;
         margin-bottom: 40px;
         font-family: 'Breathing Personal Use';
         font-weight: 200;
         color: #373720;
         font-size: 80px;
+    }
+
+    .leaf-img-tasks {
+        position: relative;
+        height: 175px;
+        top: -30px;
+        left: -40px;
+        margin-bottom: -125px;
     }
 
     .h2-show {
@@ -650,9 +697,9 @@ input.sign-up-inputs {
     }
 
     .home-container {
-        max-height: 400px; 
-        width: 450px;
-        height: 4000px;
+        max-height: 600px;
+        width: 600px;
+        height: 600px;
         background-color: rgba(255, 255, 255, 0.90);
         border-radius: 10%;
         color: white;
@@ -660,7 +707,7 @@ input.sign-up-inputs {
         padding-top: 40px;
         font-family: 'Poppins', sans-serif;
         position: relative;
-        top: 25vh;
+        top: 12vh;
     }
 
     .welcome1 {
@@ -668,10 +715,15 @@ input.sign-up-inputs {
         font-style: italic;
         font-weight: 600;
         color: #373720;
-        font-size: 60px;
+        font-size: 100px;
         position: relative;
         top: -12px;
         text-align: center;
+    }
+
+    .position {
+        position: relative;
+        top: 12px;
     }
 
     .leaflist {
@@ -679,20 +731,54 @@ input.sign-up-inputs {
         font-family: 'Breathing Personal Use';
         font-weight: 200;
         color: #373720;
-        font-size: 70px;
-        top: 25px;
-        left: 95px;
+        font-size: 120px;
+        top: 70px;
+        left: 60px;
     }
 
     .login-btns {
         display: flex;
         justify-content: space-evenly;
         flex-direction: row;
-        padding-top: 4.5rem;
+        padding-top: 8.5rem;
+    }
+
+    .leaf {
+        position: relative;
+        top: -83px;
+        left: -8px;
+        height: 393px;
+        margin: 0 auto;
+    }
+
+    .must-login {
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        color: #373720;
+        font-size: 45px;
+        text-align: center;
+        position: relative;
+        top: -12px;
+    }
+
+    footer {
+        text-align: center;
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        font-family: 'Poppins', sans-serif;
+        
+    }
+
+    body {
+        overflow: hidden;
     }
 }
 
-@media screen and (max-height: 750px) {
+@media screen and (max-height: 780px) {
     footer {
         visibility: hidden;
     }
