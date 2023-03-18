@@ -22,66 +22,66 @@ const REFRESH_TOKEN = process.env.REFRESH_TOKEN
 //     SCOPES
 // )
 
-router.get('/calendar', (req, res) => {
-const jwtClient = new google.auth.JWT(
-    GOOGLE_CLIENT_EMAIL,
-    null,
-    GOOGLE_PRIVATE_KEY,
-    SCOPES
-)})
-// Provide the required configuration
-const oAuth2Client = new OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET)
+// router.get('/calendar', (req, res) => {
+// const jwtClient = new google.auth.JWT(
+//     GOOGLE_CLIENT_EMAIL,
+//     null,
+//     GOOGLE_PRIVATE_KEY,
+//     SCOPES
+// )})
+// // Provide the required configuration
+// const oAuth2Client = new OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET)
 
-oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+// oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
 
-const calendar = google.calendar({ version: 'v3', auth: process.env.API_KEY})
+// const calendar = google.calendar({ version: 'v3', auth: process.env.API_KEY})
 
-const eventStartTime = new Date()
-eventStartTime.setDate(eventStartTime.getDay() + 2)
+// const eventStartTime = new Date()
+// eventStartTime.setDate(eventStartTime.getDay() + 2)
 
-const eventEndTime = new Date()
-eventEndTime.setDate(eventEndTime.getDay() + 2)
-eventEndTime.setMinutes(eventEndTime.getMinutes() + 45)
+// const eventEndTime = new Date()
+// eventEndTime.setDate(eventEndTime.getDay() + 2)
+// eventEndTime.setMinutes(eventEndTime.getMinutes() + 45)
 
-const event = {
-    summary: 'Meet with David',
-    location: '11611 Katy Fwy, Houston, TX 77079',
-    description: 'Meeting with David to talk about the new client project ad how to add the google calendar API',
-    start: {
-        dateTime: eventStartTime,
-        timeZone: 'America/Houston'
-    },
-    end: {
-        dateTime: eventEndTime,
-        timeZone: 'America/Houston'
-    },
-    colorId: 1, 
+// const event = {
+//     summary: 'Meet with David',
+//     location: '11611 Katy Fwy, Houston, TX 77079',
+//     description: 'Meeting with David to talk about the new client project and how to add the google calendar API',
+//     start: {
+//         dateTime: eventStartTime,
+//         timeZone: 'America/Houston'
+//     },
+//     end: {
+//         dateTime: eventEndTime,
+//         timeZone: 'America/Houston'
+//     },
+//     colorId: 1, 
 
-}
+// }
 
-calendar.freebusy.query(
-    {
-        resource: {
-            timeMin: eventStartTime,
-            timeMax: eventEndTime,
-            timeZone: 'America/Houston',
-            items: [{id: 'primary'}],
-        },
-    }, 
-    (err, res)  => {
-        if (err) return console.log('Free Busy Query Error: ', err);
+// calendar.freebusy.query(
+//     {
+//         resource: {
+//             timeMin: eventStartTime,
+//             timeMax: eventEndTime,
+//             timeZone: 'America/Houston',
+//             items: [{id: 'primary'}],
+//         },
+//     }, 
+//     (err, res)  => {
+//         if (err) return console.log('Free Busy Query Error: ', err);
 
-        const eventsArr = res.data.calendars.primary.busy
+//         const eventsArr = res.data.calendars.primary.busy
 
-        if(eventsArr.length === 0) return calendar.events.insert({calendarId: 'primary', resource: event}, 
-        err => {
-            if (err) return console.error('Calendar Event Creation Error: ', err);
+//         if(eventsArr.length === 0) return calendar.events.insert({calendarId: 'primary', resource: event}, 
+//         err => {
+//             if (err) return console.error('Calendar Event Creation Error: ', err);
 
-            return console.log('Calendar Event Created.');
-        })
-    return console.log('Sorry I\'m busy');
-    }
-)
+//             return console.log('Calendar Event Created.');
+//         })
+//     return console.log('Sorry I\'m busy');
+//     }
+// )
 
 
 

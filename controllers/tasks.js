@@ -16,8 +16,8 @@ const authRequired = (req, res, next) => {
 
 //Index route
 router.get('/', authRequired, (req, res) => {
+
     Task.find({}, (err, foundTask) => {
-        
         if (err) {
             console.log(err)
             res.send(err.message)
@@ -38,6 +38,7 @@ router.post('/', (req, res) => {
         res.redirect('/tasks')
     })
 })
+
 
 //New Form route 
 router.get('/new', authRequired, (req, res) => {
@@ -116,26 +117,5 @@ router.get('/sign-out', (req, res) => {
     req.session.destroy()
     res.redirect('/home')
 })
-// router.get('/seed', (req, res) =>{
-// 	Task.create([
-// 		{
-//             name:'grapefruit',
-//             color:'pink',
-//             readyToEat:true
-//         },
-//         {
-//             name:'grape',
-//             color:'purple',
-//             readyToEat:false
-//         },
-//         {
-//             name:'avocado',
-//             color:'green',
-//             readyToEat:true
-//         }
-// 	], (err, data) => {
-// 		res.redirect('/todo')
-// 	})
-// })
 
 module.exports = router

@@ -7,6 +7,7 @@ body {
     background-size:cover;
     background-position:center 60%;
     background-color: #e4e4bf;
+    overflow: hidden;
 }
 
 .title {
@@ -198,6 +199,20 @@ input:checked + .slider:before {
     font-family: 'Poppins', sans-serif;
     position: relative;
     top: 20vh;
+}
+
+.no-user-container {
+    max-height: 600px;
+    width: 530px;
+    height: 530px;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 10%;
+    color: white;
+    list-style: none;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 18vh;
 }
 
 .task-container::-webkit-scrollbar { 
@@ -418,13 +433,10 @@ font-family: 'Poppins', sans-serif;
     border: 1px solid #ccc; 
     padding: 10px 20px; 
     border-radius: 4px; 
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
 }
 
-.log-in-btn {
-
-}
 
 .login-btns {
     display: flex;
@@ -440,7 +452,7 @@ font-family: 'Poppins', sans-serif;
 .login-btns-no-user {
     display: flex;
     position: relative;
-    top: -200px;
+    top: -155px;
     justify-content: space-evenly;
     flex-direction: row;
 }
@@ -506,7 +518,7 @@ input.sign-up-inputs {
 .log-in-container {
     max-height: 450px;
     width: 400px;
-    height: 450px;
+    height: 420px;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 10%;
     list-style: none;
@@ -539,8 +551,8 @@ input.sign-up-inputs {
 
 .leaf {
     position: relative;
-    top: -83px;
-    left: -8px;
+    top: -60px;
+    left: -5px;
     height: 441px;
     margin: 0 auto;
 }
@@ -629,6 +641,35 @@ input.sign-up-inputs {
         margin-top: -30px;
     }
 
+    .log-in-container {
+        max-height: 450px;
+        width: 400px;
+        height: 415px;
+        background-color: rgba(255, 255, 255, 0.90);
+        border-radius: 10%;
+        list-style: none;
+        padding-top: 40px;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        top: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .rem {
+        margin-top: 2.5rem;
+    }
+
+    .login-btns-no-user {
+        display: flex;
+        position: relative;
+        top: -185px;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
     .show-page {
         position: relative;
         top: 30px;
@@ -710,6 +751,20 @@ input.sign-up-inputs {
         top: 12vh;
     }
 
+    .no-user-container {
+        max-height: 600px;
+        width: 500px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.90);
+        border-radius: 10%;
+        color: white;
+        list-style: none;
+        padding-top: 40px;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        top: 18vh;
+    }
+
     .welcome1 {
         font-family: 'Poppins', sans-serif;
         font-style: italic;
@@ -740,14 +795,18 @@ input.sign-up-inputs {
         display: flex;
         justify-content: space-evenly;
         flex-direction: row;
-        padding-top: 8.5rem;
+        padding-top: 5.5rem;
     }
+
+    /* .rem {
+        padding-top: 5.5rem;
+    } */
 
     .leaf {
         position: relative;
         top: -83px;
         left: -8px;
-        height: 393px;
+        height: 470px;
         margin: 0 auto;
     }
 

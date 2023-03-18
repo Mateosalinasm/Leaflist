@@ -1,13 +1,14 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const schedule = require('node-schedule')
+// const schedule = require('node-schedule')
 const calendar = require('./controllers/calendar.js')
 const tasksController = require('./controllers/tasks.js')
 const usersController = require('./controllers/users.js')
 const methodOverride = require('method-override')
 require('dotenv').config()
 const path = require('path');
+// const dayjs = require('dayjs')
 const session = require('express-session')
 
 
@@ -22,10 +23,12 @@ console.log(SESSION_SECRET);
 //     console.log('Job ran @', new Date().toString());
 // })
 
-const mJob = schedule.scheduleJob('m-job','*/1 * * * * *', () => {
-    console.log('I ran...');
-    mJob.cancel()
-})
+// const mJob = schedule.scheduleJob('m-job','*/1 * * * * *', () => {
+//     console.log('I ran...');
+// })
+
+// const dayJsObject = dayjs()
+// console.log(dayJsObject.format("h:mm A"));
 
 app.use(session ({
     secret: SESSION_SECRET,
@@ -62,9 +65,9 @@ app.get('/no-user', (req, res) => {
 })
 
 //Calendar route
-app.get('/calendar', (req, res) => {
-    res.render('calendar.ejs')
-})
+// app.get('/calendar', (req, res) => {
+//     res.render('calendar.ejs')
+// })
 
 
 app.listen(PORT, (req, res) => {
