@@ -5,11 +5,11 @@ I created a full-stack web application designed to help users keep track of thei
 
 Wireframes:
 
-[Task Page](https://media.git.generalassemb.ly/user/46542/files/846e920e-7eb8-4e47-ab01-7f5465e912ff)
+![Task Page](https://media.git.generalassemb.ly/user/46542/files/846e920e-7eb8-4e47-ab01-7f5465e912ff)
 
-[Edit Page](https://media.git.generalassemb.ly/user/46542/files/e6d1fd38-f48d-4e7e-b2e4-ccb8b8c7c0b8)
+![Edit Page](https://media.git.generalassemb.ly/user/46542/files/e6d1fd38-f48d-4e7e-b2e4-ccb8b8c7c0b8)
 
-[New Page](https://media.git.generalassemb.ly/user/46542/files/be7cebf8-4761-4ed5-ae9c-7f5ac3bbcc79)
+![New Page](https://media.git.generalassemb.ly/user/46542/files/be7cebf8-4761-4ed5-ae9c-7f5ac3bbcc79)
 
 Problem: Many people struggle to keep track of their daily tasks and end up forgetting important to-dos. Leaflist is a to-do app that allows users to keep track of their daily tasks, so they can better manage their time. My target audience are busy professionals, students, and anyone who wants to stay organized and productive.
 
