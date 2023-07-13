@@ -1,5 +1,5 @@
 const express = require('express')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 
 const router = express.Router()
 
@@ -10,12 +10,8 @@ router.get('/sign-up', (req, res) => {
 })
 
 router.post('/sign-up', (req, res) => {
-    const salt = 10
-    console.log(typeof req.body.password, typeof '10')
-    
-    req.body.password = bcrypt.hashSync(req.body.password, salt)
-    User.findOne({username: req.body.username}, (err, userExists) => {
-        if(userExists) {
+    User.findOne({ username: req.body.username }, (err, userExists) => {
+        if (userExists) {
             res.send('that username is taken')
         } else {
             User.create(req.body, (err, createdUser) => {
@@ -32,10 +28,9 @@ router.get('/log-in', (req, res) => {
 })
 
 router.post('/log-in', (req, res) => {
-    User.findOne({username: req.body.username}, (err, foundUser) => {
-        if(foundUser) {
-            const validLogin = bcrypt.compareSync(req.body.password, foundUser.password)
-            if(validLogin) {
+    User.findOne({ username: req.body.username }, (err, foundUser) => {
+        if (foundUser) {
+            if (req.body.password === foundUser.password) {
                 req.session.currentUser = foundUser
                 console.log(foundUser);
                 res.redirect('/tasks')

@@ -55,7 +55,7 @@ db.on('connected', () => console.log('MongoDB Connected'));
 db.on('disconnected', () => console.log('MongoDB Disconnected'));
 
 //Home Page route
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
