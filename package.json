@@ -2,9 +2,9 @@
   "name": "project-2",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": " index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch"
   },
   "keywords": [],
