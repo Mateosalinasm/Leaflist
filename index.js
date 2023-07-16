@@ -10,14 +10,14 @@ require('dotenv').config()
 const path = require('path');
 // const dayjs = require('dayjs')
 const session = require('express-session')
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+
 
 const PORT = process.env.PORT || 3005
 
 //Session
 const SESSION_SECRET = process.env.SESSION_SECRET
 console.log(SESSION_SECRET);
+
 // const someDate = new Date('2023-03-16T23:05:00.000')
 // schedule.scheduleJob(someDate, () => {
 //     console.log('Job ran @', new Date().toString());
@@ -38,8 +38,8 @@ app.use(session ({
 
 
 //Middleware
-app.set('views', path.join(__dirname, 'views'));
 mongoose.set('strictQuery', false)
+app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 app.use(methodOverride('_method'))
@@ -56,7 +56,6 @@ db.on('disconnected', () => console.log('MongoDB Disconnected'));
 
 //Home Page route
 app.get('/', (req, res) => {
-    console.log('Home page route handler accessed');
     res.render('home.ejs')
 })
 
