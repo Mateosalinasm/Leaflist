@@ -56,6 +56,7 @@ db.on('disconnected', () => console.log('MongoDB Disconnected'));
 
 //Home Page route
 app.get('/', (req, res) => {
+    console.log('Home page route handler accessed');
     res.render('home.ejs')
 })
 
