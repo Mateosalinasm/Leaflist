@@ -11,7 +11,7 @@ const path = require('path');
 // const dayjs = require('dayjs')
 const session = require('express-session')
 app.set('view engine', 'ejs');
-// app.set('views', 'path/to/views');
+app.set('views', 'views');
 
 const PORT = process.env.PORT || 3005
 
