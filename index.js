@@ -10,6 +10,7 @@ require('dotenv').config()
 const path = require('path');
 // const dayjs = require('dayjs')
 const session = require('express-session')
+app.set('view engine', 'ejs');
 
 
 const PORT = process.env.PORT || 3005
@@ -17,7 +18,7 @@ const PORT = process.env.PORT || 3005
 //Session
 const SESSION_SECRET = process.env.SESSION_SECRET
 console.log(SESSION_SECRET);
-
+app.set('views', path.join(__dirname, 'views'));
 // const someDate = new Date('2023-03-16T23:05:00.000')
 // schedule.scheduleJob(someDate, () => {
 //     console.log('Job ran @', new Date().toString());
