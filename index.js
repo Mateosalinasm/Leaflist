@@ -10,6 +10,7 @@ require('dotenv').config()
 const path = require('path');
 // const dayjs = require('dayjs')
 const session = require('express-session')
+app.set('view engine', 'ejs');
 
 
 const PORT = process.env.PORT || 3005
