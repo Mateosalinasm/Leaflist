@@ -5,7 +5,8 @@
   "main": " index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch"
+    "style": "npx tailwindcss -i ./views/assets/css/input.css -o ./views/assets/css/output.css --watch",
+    "build": "your-build-command"
   },
   "keywords": [],
   "author": "",
