@@ -23,8 +23,7 @@
     "mongoose": "6.10",
     "node": "^20.4.0",
     "node-schedule": "^2.1.1",
-    "nodemon": "^2.0.21",
-    "vercel": "^31.0.3"
+    "nodemon": "^2.0.21"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
