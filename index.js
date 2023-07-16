@@ -18,7 +18,6 @@ const PORT = process.env.PORT || 3005
 //Session
 const SESSION_SECRET = process.env.SESSION_SECRET
 console.log(SESSION_SECRET);
-
 // const someDate = new Date('2023-03-16T23:05:00.000')
 // schedule.scheduleJob(someDate, () => {
 //     console.log('Job ran @', new Date().toString());
@@ -39,8 +38,8 @@ app.use(session ({
 
 
 //Middleware
+app.set('views', path.join(__dirname, 'views'));
 mongoose.set('strictQuery', false)
-app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 app.use(methodOverride('_method'))
